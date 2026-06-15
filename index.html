@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kian Book Library</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Tahoma,sans-serif;
+}
+
+body{
+background:#f4f6f9;
+}
+
+header{
+background:#111827;
+color:white;
+text-align:center;
+padding:30px;
+}
+
+nav{
+background:#1f2937;
+padding:15px;
+text-align:center;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin:15px;
+font-size:18px;
+}
+
+.hero{
+padding:80px 20px;
+text-align:center;
+background:linear-gradient(135deg,#2563eb,#7c3aed);
+color:white;
+}
+
+.hero h1{
+font-size:50px;
+margin-bottom:15px;
+}
+
+.search{
+text-align:center;
+padding:30px;
+}
+
+.search input{
+padding:12px;
+width:300px;
+border-radius:8px;
+border:1px solid gray;
+}
+
+.search button{
+padding:12px 20px;
+background:#2563eb;
+color:white;
+border:none;
+border-radius:8px;
+cursor:pointer;
+}
+
+.books{
+display:flex;
+justify-content:center;
+gap:25px;
+flex-wrap:wrap;
+padding:40px;
+}
+
+.book{
+background:white;
+width:300px;
+padding:20px;
+border-radius:15px;
+box-shadow:0 0 15px rgba(0,0,0,0.15);
+text-align:center;
+transition:0.3s;
+}
+
+.book:hover{
+transform:translateY(-10px);
+}
+
+.book img{
+width:100%;
+border-radius:10px;
+}
+
+.book h2{
+margin-top:10px;
+}
+
+.book p{
+margin-top:10px;
+}
+
+.book button{
+margin-top:15px;
+padding:10px 20px;
+background:#2563eb;
+color:white;
+border:none;
+border-radius:8px;
+cursor:pointer;
+}
+
+.about{
+background:white;
+padding:50px;
+text-align:center;
+}
+
+footer{
+background:#111827;
+color:white;
+text-align:center;
+padding:20px;
+}
+
+.dark-btn{
+position:fixed;
+top:15px;
+right:15px;
+padding:10px;
+border:none;
+border-radius:8px;
+cursor:pointer;
+}
+
+.dark{
+background:#111827;
+color:white;
+}
+
+.dark .book{
+background:#1f2937;
+color:white;
+}
+
+.dark .about{
+background:#1f2937;
+}
+
+</style>
+</head>
+
+<body>
+
+<button class="dark-btn" onclick="toggleDarkMode()">🌙</button>
+
+<header>
+<h1>📚 Kian Library</h1>
+<p>به دنیای کتاب‌ها خوش آمدی</p>
+</header>
+
+<nav>
+<a href="#">خانه</a>
+<a href="#">کتاب‌ها</a>
+<a href="#">نویسنده‌ها</a>
+<a href="#">تماس</a>
+</nav>
+
+<section class="hero">
+<h1>بهترین کتاب‌ها در یک جا</h1>
+<p>بخوان، یاد بگیر، رشد کن</p>
+</section>
+
+<section class="search">
+<input id="search" placeholder="نام کتاب را وارد کن">
+<button onclick="searchBook()">جستجو</button>
+<h3 id="result"></h3>
+</section>
+
+<section class="books">
+<div class="book">
+<img src="https://picsum.photos/300/200?1">
+<h2>Harry Potter</h2>
+<p>ماجراجویی جادویی و هیجان‌انگیز</p>
+<button onclick="alert('Harry Potter')">مطالعه</button>
+</div>
+
+<div class="book">
+<img src="https://picsum.photos/300/200?2">
+<h2>The Little Prince</h2>
+<p>داستانی کلاسیک و الهام‌بخش</p>
+<button onclick="alert('The Little Prince')">مطالعه</button>
+</div>
+
+<div class="book">
+<img src="https://picsum.photos/300/200?3">
+<h2>Sherlock Holmes</h2>
+<p>معماهای کارآگاهی معروف</p>
+<button onclick="alert('Sherlock Holmes')">مطالعه</button>
+</div>
+
+</section>
+<section class="about">
+<h2>درباره سایت</h2>
+<p>
+این سایت برای معرفی کتاب‌های جذاب و کمک به کتاب‌خوان‌ها ساخته شده است.
+</p>
+
+</section>
+<footer>
+<p>Created By Kian 🚀</p>
+</footer>
+<script>
+function searchBook(){
+let text=document.getElementById("search").value;
+document.getElementById("result").innerHTML="نتیجه جستجو: "+text;
+}
+
+function toggleDarkMode(){
+document.body.classList.toggle("dark");
+}
+</script>
+
+</body>
+</html>
+
